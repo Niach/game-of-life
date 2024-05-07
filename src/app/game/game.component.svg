@@ -1,0 +1,7 @@
+<svg [attr.width]="width + 10" [attr.height]="height + 10" (mousedown)="mouseDown = true" (mouseup)="mouseDown = false">
+  <g>
+    <ng-container *ngFor2D="cells; let row = rowIndex; let col = columnIndex">
+      <rect (click)="mouseClick(row, col)" (mouseenter)="mouseEnter(row, col)"  [attr.stroke-width]="1" [attr.stroke]="'#000'" [attr.width]="cellSize" [attr.height]="cellSize" [attr.y]="row * cellSize" [attr.x]="col * cellSize" [attr.fill]="cells[row][col] ? '#000' : '#FFF'" ></rect>
+    </ng-container>
+  </g>
+</svg>
